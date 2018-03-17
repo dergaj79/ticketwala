@@ -1,6 +1,7 @@
 package com.ticketwala.model;
 
 import com.sun.org.apache.xpath.internal.SourceTree;
+import com.sun.org.apache.xpath.internal.operations.Or;
 
 import java.time.LocalDateTime;
 
@@ -13,10 +14,10 @@ public class TesterClass {
         Seat s2 = new Seat (2, 2, 20);
         Seat s3 = new Seat (3, 3, 30);
         Seat s4 = new Seat (4, 4, 40);
-        s1.setSold (true);
-        s2.setSold (true);
-        s3.setSold (true);
-        s4.setSold (true);
+        s1.setSold (false);
+        s2.setSold (false);
+        s3.setSold (false);
+        s4.setSold (false);
         System.out.println ("print s1 value: " + s1);
         System.out.println ("print s2 value: " + s2);
         System.out.println ("print s3 value: " + s3);
@@ -29,6 +30,7 @@ public class TesterClass {
         cinemaHall.setSeat (s2);
         cinemaHall.setSeat (s3);
         cinemaHall.setSeat (s4);
+
         System.out.println ("print CinemaHall by toString method after 4 seats occupied: " + cinemaHall.toString ());
 
 
@@ -47,6 +49,18 @@ public class TesterClass {
         System.out.println ("print all MovieShow status: " + ms2);
         System.out.println ("print all MovieShow status: " + ms3);
         System.out.println ("print all MovieShow status: " + ms4);
+
+        System.out.println ("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ \n");
+//        Seat seat5 = new Seat (4, 7, 2.2);
+//        seat5.setSold (true);
+//        cinemaHall.setSeat (seat5);
+//        Order order1 = new Order ("1",ms1);
+//        System.out.println ("get Movie show details: " + order1.getMovieShow ());
+//        System.out.println ("get Seats: " + order1.getSeats ());
+//        System.out.println ("Print the total cost of order: " + order1.getTotalCost ());
+//        System.out.println ("Add seat number seat5 : " + order1.addSeat (seat5));
+//        System.out.println ("status of seat 5:" + seat5.toString ());
+//        System.out.println (cinemaHall.toString ());
 
     }
 

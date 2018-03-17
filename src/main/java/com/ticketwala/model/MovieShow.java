@@ -2,7 +2,8 @@ package com.ticketwala.model;
 import java.time.LocalDateTime;
 
 /**
- *
+ * @author dasst
+
  */
 public class MovieShow {
     private static final int CINEMA_SEATS_IN_A_ROW =5;
@@ -15,6 +16,14 @@ public class MovieShow {
     private int durationInMinute;
     private CinemaHall cinemaHall;
 
+    /**
+     * this MoveShow class contractor
+     *
+     * @param id               this the String ID of MovieShow
+     * @param movieName        this the name of movie
+     * @param time             this will get the local date time using LocalDateTime Class
+     * @param durationInMinute this the movie duration
+     */
     public MovieShow(String id, String movieName, LocalDateTime time, int durationInMinute) {
         this.id = id;
         this.movieName = movieName;
@@ -42,10 +51,14 @@ public class MovieShow {
     public CinemaHall getCinemaHall() {
         return cinemaHall;
     }
+
     public double getTicketPrice() {
         return TICKET_PRICE;
     }
 
+    /**
+     * this method will return  the class toString
+     */
     @Override
     public String toString() {
         return "MovieShow{" + "id='" + id + '\'' +

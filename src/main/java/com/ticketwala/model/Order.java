@@ -3,6 +3,10 @@ package com.ticketwala.model;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * @param
+ * @author dasst
+ */
 public class Order {
     private  String id;
     private MovieShow  movieShow;
@@ -25,6 +29,7 @@ public class Order {
     public List<Seat> getSeats () {
         return seats;
     }
+
     public boolean addSeat(Seat seatToOrder){
         //Check if seat is taken in the cinema hall
         if (movieShow.getCinemaHall().getSeat(seatToOrder.getRow(), seatToOrder.getSeatNumber()).isSold()) {

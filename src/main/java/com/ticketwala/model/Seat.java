@@ -1,5 +1,11 @@
 package com.ticketwala.model;
 
+/**
+ * this class will present the cinema seats status...
+ *
+ * @author dasst
+ * @serial
+ */
 public class Seat {
     private int row;
     private int seatNumber;

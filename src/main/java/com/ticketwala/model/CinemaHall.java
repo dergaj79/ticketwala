@@ -1,5 +1,11 @@
 package com.ticketwala.model;
 
+/**
+ * this class will handle the Cinema Hall actions...
+ *
+ * @author dasst
+ */
+
 public class CinemaHall {
     private Seat[][] seatsArray;
 
@@ -29,9 +35,11 @@ public class CinemaHall {
     public Seat getSeat(int row, int seatNumber){
         return this.seatsArray[row][seatNumber];
     }
+
     public void setSeat(Seat seat){
         this.seatsArray[seat.getRow()][seat.getSeatNumber()] = seat;
     }
+
     public Seat [][] getSeatsArray(){
         return seatsArray;
     }
