@@ -25,10 +25,17 @@ public class Order {
 	public List<Seat> getSeats() {
 		return seats;
 	}
-	
+//	
 	public boolean addSeat(Seat seatToOrder) {
+//		
+//		//Check if seat is taken in the cinema hall
+//		if (movieShow.getCinemaHall().isSeatSold(seatToOrder) || seats.contains(seatToOrder)) {
+//			return false;
+//		}
+//	
+//		seats.add(seatToOrder);
+//		
 		
-		//Check if seat is taken in the cinema hall
 		if (movieShow.getCinemaHall().getSeat(seatToOrder.getRow(), seatToOrder.getSeatNumber()).isSold()) {
 			return false;
 		}
@@ -38,7 +45,6 @@ public class Order {
 		} else {
 			return this.seats.add(seatToOrder);
 		}
-	
 	}
 	
 	public double getTotalCost() {
@@ -49,4 +55,8 @@ public class Order {
 		return result;
 	}
 	
+	public int countSeats() {
+		return seats.size();
+
+	}
 }

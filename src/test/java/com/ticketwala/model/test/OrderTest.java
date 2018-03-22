@@ -10,8 +10,8 @@ import org.junit.Test;
 import com.ticketwala.model.MovieShow;
 import com.ticketwala.model.Order;
 import com.ticketwala.model.Seat;
-
-public class OrderTest {
+import static org.junit.Assert.*
+;public class OrderTest {
 
 	@Before
 	public void setUp() throws Exception {
@@ -27,7 +27,7 @@ public class OrderTest {
 	}
 	
 	@Test
-	public void testAddSeat() {
+	public void testAddOneSeat() {
 		Order order = createOrder();
 		
 		//Add 1 seat to order
@@ -44,17 +44,32 @@ public class OrderTest {
 		success = order.addSeat(new Seat(1, 2, 30.0));
 		Assert.assertTrue(success && order.getSeats().size() == 2);
 	}
+	
+	//added by me in class 22-03-18
+	@Test
+	public void testAddExistingSeat() {
+		Order  order =  createOrder();
+		assertTrue(order.countSeats()== 0 );
+		boolean success =  order.addSeat(new Seat(1, 1, 30.4));
+		assertTrue(success);
+		assertTrue(order.countSeats()==1);
+		
+		Seat otherSeat = new Seat (1,1,30.4);
+		success = order.addSeat(otherSeat);
+		assertFalse(success);
+		
+	}
 
 	@Test
 	public void testGetTotalCost() {
 		Order order = createOrder();
 		
-		Assert.assertTrue(order.getTotalCost() == 0);
+		assertTrue(order.getTotalCost() == 0);
 		
 		order.addSeat(new Seat(1, 1, 30.0));
 		order.addSeat(new Seat(1, 2, 30.0));
 		order.addSeat(new Seat(1, 3, 30.0));
-		Assert.assertTrue(order.getTotalCost() == 90);
+		assertTrue(order.getTotalCost() == 90);
 	}
 
 }

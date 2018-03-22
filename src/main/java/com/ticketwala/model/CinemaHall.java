@@ -33,9 +33,15 @@ public class CinemaHall {
     public void setSeat(Seat seat) {
         this.seatsArray[seat.getRow()][seat.getSeatNumber()] = seat;
     }
-    
+
 	public Seat[][] getSeatsArray() {
 		return seatsArray;
+	}
+//TODO: In need to change it 
+	public boolean isSeatSold(Seat seatToOrder) {
+		// TODO Auto-generated method stub
+		return false;
+//		[seatToOrder.getRow()][setSeat(seatToOrder.getSeatNumber())];
 	}
 
 }
