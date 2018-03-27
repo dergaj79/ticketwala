@@ -33,8 +33,10 @@ dependencies {
     // end::jetty[]
     // tag::actuator[]
     compile("org.springframework.boot:spring-boot-starter-actuator")
-    compile("org.springframework.boot:spring-boot-devtools")
     // end::actuator[]
+    compile("org.springframework.boot:spring-boot-devtools")
+    testCompile 'org.springframework.boot:spring-boot-starter-test:1.5.3.RELEASE'
+    testCompile 'io.rest-assured:rest-assured:3.0.5'
     testCompile("junit:junit")
 }
 
@@ -44,7 +46,7 @@ test {
         events "PASSED", "FAILED", "SKIPPED"
     }
 }
-
+	
 //springBoot {
 //    mainClass = "com.att.ticketwala.startup.TicketWalaStarter"
 //}

@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.ticketwala.command.api.Result;
 import com.ticketwala.dao.api.DataAccessService;
 import com.ticketwala.dao.impl.DataAccessServiceImpl;
@@ -13,9 +16,12 @@ import com.ticketwala.model.Order;
 import com.ticketwala.model.Seat;
 import com.ticketwala.service.api.TicketWalaService;
 
+@Service
 public class TicketWalaServiceImpl implements TicketWalaService {
+
 	
-	private DataAccessService das = null;
+	@Autowired
+	private DataAccessService das;
 	private HashMap<String, Order> orders = null;
 	
 	public TicketWalaServiceImpl() {

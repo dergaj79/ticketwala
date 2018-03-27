@@ -6,12 +6,15 @@ import java.util.HashMap;
 import java.util.prefs.BackingStoreException;
 import java.util.prefs.Preferences;
 
+import org.springframework.stereotype.Service;
+
 import com.ticketwala.command.api.Result;
 import com.ticketwala.dao.api.DataAccessService;
 import com.ticketwala.model.MovieShow;
 import com.ticketwala.model.Order;
 import com.ticketwala.model.Seat;
 
+@Service
 public class DataAccessServiceImpl implements DataAccessService {
 
 	private static final String MOVIESHOW_ROOT = "/movieshow";
